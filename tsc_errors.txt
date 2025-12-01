@@ -1,0 +1,5 @@
+app/auth/login/page.tsx(36,11): error TS2353: Object literal may only specify known properties, and 'emailRedirectTo' does not exist in type '{ captchaToken?: string | undefined; }'.
+supabase/functions/process-document/index.ts(1,23): error TS2307: Cannot find module 'https://deno.land/std@0.168.0/http/server.ts' or its corresponding type declarations.
+supabase/functions/process-document/index.ts(2,30): error TS2307: Cannot find module 'https://esm.sh/@supabase/supabase-js@2' or its corresponding type declarations.
+supabase/functions/process-document/index.ts(9,14): error TS7006: Parameter 'req' implicitly has an 'any' type.
+supabase/functions/process-document/index.ts(94,31): error TS18046: 'error' is of type 'unknown'.
