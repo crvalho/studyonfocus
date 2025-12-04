@@ -1,7 +1,5 @@
 node_modules
 .next
-.env
-.env.local
 .vercel
 dist
 build
@@ -10,3 +8,5 @@ __pycache__
 .DS_Store
 coverage
 .vscode
+backend/serviceAccountKey.json
+.env
