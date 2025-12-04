@@ -6,12 +6,27 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+import traceback
+
 app = FastAPI()
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    error_msg = f"Global Error: {str(exc)}\n{traceback.format_exc()}"
+    print(error_msg)
+    # File writing removed for Vercel (read-only filesystem)
+    return JSONResponse(
+        status_code=500,
+        content={"message": "Internal Server Error", "detail": str(exc)},
+    )
 
 # Configurar CORS
 origins = [
     "http://localhost:3000",
     "http://localhost:3001",
+    "*", # Allow all origins for initial Vercel deployment
 ]
 
 app.add_middleware(
